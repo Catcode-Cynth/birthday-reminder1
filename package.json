@@ -1,20 +1,21 @@
 {
-  "name": "birthday-reminder1",
+  "name": "birthday-reminder",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple automated Birthday Reminder App with daily email notifications",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "npm rebuild better-sqlite3"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["birthday", "reminder", "nodejs", "email"],
+  "author": "Cynthia",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "better-sqlite3": "^12.9.0",
-    "dotenv": "^17.4.2",
-    "ejs": "^5.0.2",
-    "express": "^5.2.1",
-    "node-cron": "^4.2.1",
-    "nodemailer": "^8.0.7"
+    "better-sqlite3": "^11.0.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.14"
   }
 }

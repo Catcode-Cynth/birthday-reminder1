@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Customers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold mb-8">All Registered Customers</h1>
+    <a href="/" class="text-purple-600 mb-6 inline-block hover:underline">← Back to Add</a>
+    
+    <table class="w-full bg-white rounded-3xl overflow-hidden shadow">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-4 text-left">Username</th>
+          <th class="p-4 text-left">Email</th>
+          <th class="p-4 text-left">Date of Birth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr class="border-t">
+            <td class="p-4"><%= user.username %></td>
+            <td class="p-4"><%= user.email %></td>
+            <td class="p-4"><%= user.dob %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Reminder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-pink-100 to-purple-100 min-h-screen">
+  <div class="max-w-lg mx-auto mt-12 bg-white rounded-3xl shadow-xl p-8">
+    <h1 class="text-5xl font-bold text-center mb-2">🎂 Birthday Reminder</h1>
+    <p class="text-center text-gray-600 mb-8">Never miss a customer's special day again!</p>
+
+    <% if (message === 'success') { %>
+      <div class="bg-green-100 text-green-700 p-4 rounded-2xl mb-6 text-center">✅ Customer added successfully!</div>
+    <% } else if (message === 'duplicate') { %>
+      <div class="bg-red-100 text-red-700 p-4 rounded-2xl mb-6 text-center">❌ Email already exists!</div>
+    <% } else if (message === 'error') { %>
+      <div class="bg-red-100 text-red-700 p-4 rounded-2xl mb-6 text-center">❌ Something went wrong.</div>
+    <% } %>
+
+    <form action="/add" method="POST" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium mb-1">Username / Full Name</label>
+        <input type="text" name="username" required class="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:border-pink-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Email Address</label>
+        <input type="email" name="email" required class="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:border-pink-500">
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Date of Birth</label>
+        <input type="date" name="dob" required class="w-full px-4 py-3 border rounded-2xl focus:outline-none focus:border-pink-500">
+      </div>
+      <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition">
+        Add Birthday 🎉
+      </button>
+    </form>
+
+    <a href="/users" class="block text-center mt-8 text-purple-600 hover:underline">View All Customers →</a>
+  </div>
+</body>
+</html>
